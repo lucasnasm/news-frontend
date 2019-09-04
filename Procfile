@@ -1,1 +1,1 @@
-web: node index.js
+web: ruby -run -e httpd -p $PORT .
