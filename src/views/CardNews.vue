@@ -7,7 +7,7 @@
       <v-row>
        <v-col class="d-flex" cols="12" sm="6">
         <v-select
-          :items="sites_cat"
+          :items="sites"
           label="Selecionar site"
           solo
           v-model="ssite"
@@ -80,9 +80,9 @@ export default {
  
   data(){
     return{
-      //sites: null,
-      //category: null,
-      sites_cat: null,
+      sites: ['Omelete', 'The Enemy', 'IGN'],
+      category: ['Filmes', 'Series'],
+      //sites_cat: null,
       infonews: null,
       ssite: null,
       stheme: null
@@ -92,7 +92,7 @@ export default {
     
        api
       .get('/sites')
-      .then(response => (this.sites_cat = response.data[0].sitesTheme, console.log(response)))
+      .then(response => (this.sites_cat = response.data[0].sitesTheme))
       
   
   },
