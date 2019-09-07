@@ -32,36 +32,36 @@
    
  
       </v-row>
-      <v-row v-for="info in infonews" v-bind:key="info.title">
+      <v-row justify="center" v-for="info in infonews" v-bind:key="info.title">
         
         <v-col>
-              <v-card
-            color="#fb8b00"
-            dark
-          >
-            <v-list-item three-line>
-                  <v-list-item-avatar
-                size="125"
-                tile
-              >
-                <v-img :src="info.image"></v-img>
-              </v-list-item-avatar>
-              <v-list-item-content class="align-self-start">
-                <v-list-item-title
-                  class="headline mb-2"
-                  v-text="info.title"
-                ></v-list-item-title>
+            <v-card
+    class="mx-auto"
+       outlined=""
+       :href="info.url"
+       target="_blank"
+   
 
-                <v-list-item-subtitle v-text="info.subtitle"></v-list-item-subtitle>
-                
-              </v-list-item-content>
-              <v-list-item-action><a :href="info.url" target="_blank">Ir para site</a></v-list-item-action>
+    
+    
+  >
+  
+    <v-list-item three-line >
+            <v-list-item-avatar
+          tile
+        size="80"        
+      >            <v-img :src="info.image"></v-img>
+</v-list-item-avatar>
+      <v-list-item-content >
+        <p v-if="$vuetify.breakpoint.xsOnly" class="black--text">{{info.title}}</p>
+        <v-list-item-title class="headline mb-1" v-if="$vuetify.breakpoint.lgOnly">{{info.title}}</v-list-item-title>
+        <v-list-item-subtitle v-if="$vuetify.breakpoint.lgOnly">{{info.subtitle}}</v-list-item-subtitle>
+      </v-list-item-content>
 
-              
 
-          
-            </v-list-item>
-          </v-card>
+    </v-list-item>
+
+  </v-card>
         </v-col>
         
         
@@ -122,8 +122,9 @@ export default {
 }
 </script>
 
-<style  scoped>
+<style scoped>
 a {
   text-decoration: none ;
 }
+
 </style>
