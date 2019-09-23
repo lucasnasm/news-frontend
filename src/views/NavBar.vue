@@ -1,14 +1,24 @@
 <template>
 
-    <v-toolbar color="#cc0000" class="white--text font-weight-bold">
-            <div class="flex-grow-1"></div>
+  <v-content>
+    
+        <v-container class="fix">
 
-      <v-toolbar-title>/ Só News /</v-toolbar-title>
+      <v-app-bar
+      fixed=""
+      color="#cc0000"
 
-      <div class="flex-grow-1"></div>
+      >
+<div class="flex-grow-1"></div>
+        <v-toolbar-title class="display-2 white--text">S-News</v-toolbar-title>
 
+        <div class="flex-grow-1"></div>
 
-    </v-toolbar>
+    
+      </v-app-bar>
+              </v-container>
+
+</v-content>
 
 </template>
 
@@ -17,3 +27,9 @@ export default {
 
 }
 </script>
+
+<style  scoped>
+.fix{
+  padding-bottom: 50px;
+}
+</style>
